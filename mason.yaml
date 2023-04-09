@@ -11,7 +11,9 @@ bricks:
   #   git:
   #     url: https://github.com/felangel/mason.git
   #     path: bricks/widget
+  # install_prisma:
+  #   git:
+  #     url: https://github.com/athulacaj/bricks.git
+  #     path: nodejs/install_prisma
   install_prisma:
-    git:
-      url: https://github.com/athulacaj/bricks.git
-      path: nodejs/install_prisma
+    path: nodejs/install_prisma

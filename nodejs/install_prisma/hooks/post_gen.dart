@@ -17,7 +17,7 @@ Future<void> run(HookContext context) async {
   final generateProgress = context.logger
       .progress('running npx prisma init --datasource-provider postgresql');
   await Process.run(
-          'npx', ['prisma', 'init', '--datasource-provider postgresql'])
+          'npx', ['prisma', 'init', '--datasource-provider', 'postgresql'])
       .then((value) => print(value.stdout))
       .catchError((error) => print(error));
   generateProgress.complete();
