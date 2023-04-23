@@ -3,7 +3,7 @@ import 'package:mason/mason.dart';
 
 Future<void> run(HookContext context) async {
   final installProgress = context.logger.progress(
-      'running npm i --save-dev prisma typescript ts-node @types/node');
+      'running npm i --save-dev prisma typescript ts-node @types/node nodemon');
   // Run `flutter packages get` after generation.
   await Process.run('npm', [
     'install',
@@ -12,6 +12,7 @@ Future<void> run(HookContext context) async {
     'typescript',
     'ts-node',
     '@types/node',
+    'nodemon'
   ]);
   installProgress.complete();
   final generateProgress = context.logger
