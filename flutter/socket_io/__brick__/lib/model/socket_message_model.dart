@@ -24,12 +24,14 @@ class SocketMessageModel {
     this.readUserIds = const [],
   });
 
-  factory SocketMessageModel.fromJson({var json, String msgKey = 'message_id'}) {
+  factory SocketMessageModel.fromJson(
+      {var json, String msgKey = 'message_id'}) {
     return SocketMessageModel(
       body: json['body'] ?? '',
       createdAt: DateTime.parse(json['created_at']).toLocal(),
       userId: json['sender_id'].toString(),
-      messageId: json[msgKey] is String ? int.tryParse(json[msgKey]) : json[msgKey],
+      messageId:
+          json[msgKey] is String ? int.tryParse(json[msgKey]) : json[msgKey],
       temporaryMsgId: json['temporary_msg_id'],
       readUserIds: json['read_user_ids'] ?? [],
       // participantType: json['participant_type'],
